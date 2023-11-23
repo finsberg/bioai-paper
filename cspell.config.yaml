@@ -1,0 +1,11 @@
+dictionaryDefinitions:
+  - name: bioai_paper
+    path: .cspell_dict.txt
+    addWords: true
+dictionaries:
+  - bioai_paper
+ignoreWords: [
+    tableofcontents,
+    ipynb,
+    oneline
+  ]

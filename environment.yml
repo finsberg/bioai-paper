@@ -1,0 +1,5 @@
+name: "bioai_paper"
+channels:
+  - conda-forge
+dependencies:
+  - jupyter-book- python=3.10

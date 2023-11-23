@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=64.4.0", "wheel", "pip>=22.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bioai_paper"
+version = "0.1.0"
+authors = [{name = "Henrik Finsberg", email = "henriknf@simula.no"}]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.8.0"
+# Generate requirements.txt using
+# pip-compile --output-file=requirements.txt pyproject.toml
+dependencies = [
+]
+
+[project.urls]
+Homepage = "https://finsberg.github.io/bioai_paper"
+Documentation = "https://finsberg.github.io/bioai_paper"
+Source = "https://github.com/finsberg/bioai_paper"
+Tracker = "https://github.com/finsberg/bioai_paper/issues"
+
+
+
+[project.optional-dependencies]
+# Generate requirements-dev.txt using
+# pip-compile --extra=dev --output-file=requirements-dev.txt pyproject.toml
+dev = [
+    "pre-commit",
+
+]
+# Generate requirements-docs.txt using
+# pip-compile --extra=docs --output-file=requirements-docs.txt pyproject.toml
+docs = [
+    "jupyter-book",
+    "jupytext",
+    "sphinxcontrib-bibtex",
+]
+all = [
+    "bioai_paper[dev]",
+    "bioai_paper[docs]",
+]
+# Needed for editable install with no package
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = ["E", "F"]
+ignore = ["E402", "E741", "E731", "E743"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.10.
+target-version = "py310"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
